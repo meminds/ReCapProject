@@ -15,8 +15,6 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
-        IBrandDal _brandDal;
-        IColorDal _colorDal;
         public void Add(Car car)
         {
             if (car.Description.Length >= 2 && car.DailyPrice > 0)

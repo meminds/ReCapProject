@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Core.Entities.DTOs;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -15,21 +17,15 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
-        public void Add(Car car)
-        {
-            if (car.Description.Length >= 2 && car.DailyPrice > 0)
-            {
-
-                _carDal.Add(car);
-            }
-            else
-            {
-                Console.WriteLine("Car could not added...");
-            }
-        }
+        
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            return _carDal.GetProductDetails();
         }
 
         public List<Car> GetCarsByBrandId(int id)

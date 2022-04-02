@@ -26,7 +26,7 @@ namespace Business.Concrete
         public IResult Delete(User user)
         {
             _userDal.Delete(user);
-            return new ErrorResult("User deleted..");
+            return new SuccessResult("User deleted..");
         }
 
         public IDataResult<List<User>> GetAll()
